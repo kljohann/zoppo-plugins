@@ -183,6 +183,9 @@ editor:vi:normal:bind 'v' edit-command-line
 # open man page for the current command
 editor:vi:normal:bind 'h' run-help
 
+# prepend sudo or sudoedit to command line
+editor:vi:normal:bind 's' command-line-prepend-sudo
+
 # undo/redo
 editor:vi:normal:bind 'u' undo
 editor:vi:normal:bind 'Control+R' redo
