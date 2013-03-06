@@ -1,0 +1,9 @@
+if [[ $BUFFER != su(do|doedit|)\ * ]]; then
+  if [[ $LBUFFER == vim\ * ]]; then
+    LBUFFER="sudoedit ${LBUFFER#vim }"
+  else
+    LBUFFER="sudo $LBUFFER"
+  fi
+fi
+
+# vim: ft=zsh sts=2 ts=2 sw=2 et fdm=marker fmr={{{,}}}
