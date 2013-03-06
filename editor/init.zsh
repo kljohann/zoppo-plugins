@@ -9,6 +9,9 @@ editor:keys:load
 editor:load edit-command-line
 editor:load self-insert url-quote-magic
 
+alias run-help >&/dev/null && unalias run-help
+functions:autoload run-help run-help-git run-help-sudo
+
 # Editor Information {{{
 function editor-info {
   unset editor_info
@@ -176,6 +179,9 @@ fi
 # vi {{{
 # edit command in an external editor.
 editor:vi:normal:bind 'v' edit-command-line
+
+# open man page for the current command
+editor:vi:normal:bind 'h' run-help
 
 # undo/redo
 editor:vi:normal:bind 'u' undo
