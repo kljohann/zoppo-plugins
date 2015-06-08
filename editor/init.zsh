@@ -186,6 +186,9 @@ editor:vi:normal:bind 'h' run-help
 # prepend sudo or sudoedit to command line
 editor:vi:normal:bind 's' command-line-prepend-sudo
 
+# "postpone" the current line
+editor:vi:normal:bind 'z' push-line-or-edit
+
 # undo/redo
 editor:vi:normal:bind 'u' undo
 editor:vi:normal:bind 'Control+R' redo
