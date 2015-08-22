@@ -286,4 +286,14 @@ END
 }
 # }}}
 
+# Change directory when quitting ranger {{{
+ranger() {
+  local tempfile=$(mktemp)
+  trap "[[ -e \"$tempfile\" ]] && rm -f -- \"$tempfile\"" EXIT
+
+  command ranger --choosedir="$tempfile" "${@:-$PWD}"
+  [[ -r "$tempfile" && $(<"$tempfile") != "$PWD" ]] && cd -- "$(<"$tempfile")"
+}
+# }}}
+
 # vim: ft=zsh sts=2 ts=2 sw=2 et fdm=marker fmr={{{,}}}
