@@ -196,9 +196,13 @@ editor:vi:normal:bind 'Control+R' redo
 if editor:is-loaded history-incremental-pattern-search-backward; then
   editor:vi:normal:bind '?' history-incremental-pattern-search-backward
   editor:vi:normal:bind '/' history-incremental-pattern-search-forward
+  editor:vi:insert:bind 'Control+R' history-incremental-pattern-search-backward
+  editor:vi:insert:bind 'Control+S' history-incremental-pattern-search-forward
 else
   editor:vi:normal:bind '?' history-incremental-search-backward
   editor:vi:normal:bind '/' history-incremental-search-forward
+  editor:vi:insert:bind 'Control+R' history-incremental-search-backward
+  editor:vi:insert:bind 'Control+S' history-incremental-search-forward
 fi
 
 # Dumb Terminals {{{
